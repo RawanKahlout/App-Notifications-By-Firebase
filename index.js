@@ -257,7 +257,6 @@ exports.pushMessageToUserObject = functions.database.ref('/messages/{messagesUid
       customerRef.orderByChild("token").equalTo(value).once("value", function (snapshot) {
         if (snapshot.val()) {
           documents = Object.keys(snapshot.val());
-          console.log(documents[0],"documenkkkkkkkkkkkkkkkkkkkkkkkkknnnnts");
           let update_ref = admin.database().ref("customerMessages").child(documents[0]);
           update_ref.push(snap.val(), function (err) {
             if (err) {
@@ -335,57 +334,6 @@ exports.unsubscribeToTopics = functions.https.onRequest((req, res) => {
   })
 });
 
-// exports.main = functions.https.onRequest((req, res) => {
-
-//   const bucketName = "nejree-notifications.appspot.com";
-//   const filename = "/images/img.png";
-//   async function uploadFile() {
-
-//     console.log( );
-//     await storage.bucket(bucketName).upload(`${__dirname}${filename}`, {
-//       // Support for HTTP requests made with `Accept-Encoding: gzip`
-//       gzip: true,
-//       // By setting the option `destination`, you can change the name of the
-//       // object you are uploading to a bucket.
-//       metadata: {
-//         // Enable long-lived HTTP caching headers
-//         // Use only if the contents of the file will never change
-//         // (If the contents will change, use cacheControl: 'no-cache')
-//         cacheControl: 'public, max-age=31536000',
-//       },
-//     });
-
-//     console.log(`${filename} uploaded to ${bucketName}.`, "yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees");
-//     return res.status(200).send("kk");
-//   }
-
-//   uploadFile().catch(console.error
-//   );
-//   res.status(400).send("kk");
-//   // [END storage_upload_file]
-// })
-
-
-// //do
-// exports.downloadImages = functions.https.onRequest((req, res) => {
-//   const storage = new Storage();
-// const bucket = storage.bucket("nejree-notifications.appspot.com");
-// const file = bucket.file('Sunflower_from_Silesia2.jpg');
-// const writeStream = file.createWriteStream({
-//   metadata: {
-//     contentType: 'image/jpg',
-//     metadata: {
-//       custom: 'metadata'
-//     }
-//   }});
-
-
-// fetch('https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg')
-//   .then(res => {
-//     return res.body.pipe(writeStream).send("h").status(200);
-//   }).catch((err)=>{return res.send(err);})
-
-// })
 
 
 // //====================functions============================
