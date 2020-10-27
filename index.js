@@ -179,7 +179,7 @@ function getFcmTokenInfo(fcmToken) {
     uri: `https://iid.googleapis.com/iid/info/${fcmToken}`,
     headers:
     {
-      Authorization: "key=AAAAc7CjBpA:APA91bGjjJzAkEetCDmjWzT8BPT49nIZJKs46au-1YREzbm8usc-MabHoMdCPqZN38cJ13kKyy_fNGH66FQzRnShW-67xT6x7JCg4ZFur6a_aj2AayPK1KC0oZElcF58qG3Azf30fFf9",
+      Authorization: "",
     },
     json: true,
     qs: {
