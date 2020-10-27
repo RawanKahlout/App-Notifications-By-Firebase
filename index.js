@@ -3,7 +3,7 @@ const sdkConfig = require('./firebase-sdk.json');
 var admin = require('firebase-admin');
 admin.initializeApp({
   credential: admin.credential.cert(sdkConfig),
-  databaseURL: "https://nejree-notifications.firebaseio.com/",
+  databaseURL: "",
 });
 const db = admin.database();
 const REQUEST_PROMISE = require('request-promise');
