@@ -14,16 +14,7 @@ const messagesRef = db.ref("messages");
 const topicsRef = db.ref("topics");
 const customerMessages = db.ref("customerMessages")
 const dayLimit = 30;
-const AuthToken = "rawan";
-// const sdkConfig = require('./firebase-sdk.json');
-// const storageConfig = require('./cloud-storage.json');
-// const fetch = require('node-fetch');
-// admin.initializeApp({
-//   credential: admin.credential.cert(sdkConfig),
-//   databaseURL: "https://nejree-notifications.firebaseio.com/",
-// });
-// const { Storage } = require('@google-cloud/storage');
-// const storage = new Storage({ keyFilename: storageConfig });
+
 const notificationPayload = {
   notifications: {
     title: "",
