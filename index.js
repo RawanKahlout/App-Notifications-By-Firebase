@@ -148,7 +148,7 @@ exports.pushEvent = functions.https.onRequest((req, res) => {
         "token": req.body.token,
         "sendingDate": sendAt,
         "arrivingDate": Date.now()
-      }, (error) => { 
+      }, (error) => { //check else if work
         if (error) { throw error }
         else {
           response.status = true;
@@ -496,10 +496,10 @@ exports.unsubscribeToTopics = functions.https.onRequest((req, res) => {
 
 function downloadImages(reqUrl) {
   url = reqUrl;
-  StorageUrl = config_keys.StorageUrl;
+  StorageUrl = config_keys.storageUrl;
   let filename = url.split('/').pop();
   const storage = new Storage();
-  const bucket = storage.bucket("nejree-notifications.appspot.com");
+  const bucket = storage.bucket(config_keys.bucketName);
   const file = bucket.file(filename);
   try {
     request
